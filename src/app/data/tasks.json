@@ -40,6 +40,11 @@
           "id": "1",
           "name": "John Doe",
           "initials": "JD"
+        },
+        {
+          "id": "2",
+          "name": "Jalitha Kheminda",
+          "initials": "JK"
         }
       ],
       "category": "research",

@@ -1,7 +1,7 @@
 // app/dashboard/sport-xi/page.tsx
 "use client";
 import { ProjectHeader } from "@/app/dashboard/ProjectHeader";
-import { KanbanBoard } from "@/app/dashboard/KanbanBoard";
+import { KanbanBoard } from "../dashboard/KanbanBoard";
 
 export default function SportXiProjectPage() {
   return (

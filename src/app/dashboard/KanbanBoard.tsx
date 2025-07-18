@@ -58,8 +58,8 @@ export const KanbanBoard: React.FC = () => {
   }
 
   return (
-    <div className="flex-1 min-h-screen p-6 bg-gray-100">
-      <div className="flex gap-6 pb-4 overflow-x-auto">
+    <div className="flex-1 min-h-screen p-6 bg-white">
+      <div className="flex gap-2 pb-4 overflow-x-auto border-b-neutral-500">
         {columns.map((column) => {
           const columnTasks = getTasksByStatus(column.status);
           
