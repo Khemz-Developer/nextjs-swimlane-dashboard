@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { KanbanColumn } from "./KanbanColumn";
-import { useTaskStore } from "../store/taskStore";
-import { Task } from "../types";
+import { useTaskStore } from "../../store/taskStore";
+import { Task } from "../../types";
 
 export const KanbanBoard: React.FC = () => {
   const { tasks, columns, initializeData, getTasksByStatus, moveTask } =

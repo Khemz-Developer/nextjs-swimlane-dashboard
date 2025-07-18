@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { TaskCard } from './TaskCard';
-import { Task, Column } from '../types';
+import { Task, Column } from '../../types';
 
 interface KanbanColumnProps {
   column: Column;

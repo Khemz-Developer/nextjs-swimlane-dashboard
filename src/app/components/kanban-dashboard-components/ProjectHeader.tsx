@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { Badge } from "../components/ui/Badge";
-import { Avatar } from "../components/ui/Avatar";
-import { EditIcon } from "../components/Icon";
-import { useTaskStore } from "../store/taskStore";
+import { Badge } from "../ui/Badge";
+import { Avatar } from "../ui/Avatar";
+import { EditIcon } from "../Icon";
+import { useTaskStore } from "../../store/taskStore";
 
 interface ProjectHeaderProps {
   className?: string;
