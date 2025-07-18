@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
 // components/layout/Sidebar.tsx
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { 
-  DashboardIcon, 
-  BoardIcon, 
-  UsersIcon, 
-  CalendarIcon, 
-  MessageIcon, 
-  SupportIcon, 
-  LogoutIcon 
-} from './Icon';
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import {
+  DashboardIcon,
+  BoardIcon,
+  UsersIcon,
+  CalendarIcon,
+  MessageIcon,
+  SupportIcon,
+  LogoutIcon,
+} from "./Icon";
 
 interface SidebarProps {
   className?: string;
@@ -26,80 +26,82 @@ interface MenuItem {
   children?: MenuItem[];
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
+export const Sidebar: React.FC<SidebarProps> = ({ className = "" }) => {
   const router = useRouter();
-  const [activeItem, setActiveItem] = useState('dashboard');
-  const [expandedItems, setExpandedItems] = useState<string[]>(['boards']);
+  const [activeItem, setActiveItem] = useState("dashboard");
+  const [expandedItems, setExpandedItems] = useState<string[]>(["boards"]);
 
   const menuItems: MenuItem[] = [
     {
-      id: 'dashboard',
-      label: 'Dashboard',
+      id: "dashboard",
+      label: "Dashboard",
       icon: <DashboardIcon size={16} />,
-      isActive: activeItem === 'dashboard',
+      isActive: activeItem === "dashboard",
     },
     {
-      id: 'boards',
-      label: 'Boards',
+      id: "boards",
+      label: "Boards",
       icon: <BoardIcon size={16} />,
       children: [
         {
-          id: 'create-routes',
-          label: 'Create routes',
+          id: "create-routes",
+          label: "Create routes",
           icon: <div className="w-2 h-2 bg-gray-400 rounded-full" />,
         },
         {
-          id: 'deployment-react',
-          label: 'Deployment React App',
+          id: "deployment-react",
+          label: "Deployment React App",
           icon: <div className="w-2 h-2 bg-gray-400 rounded-full" />,
         },
         {
-          id: 'sport-xi',
-          label: 'Sport Xi Project',
+          id: "sport-xi",
+          label: "Sport Xi Project",
           icon: <div className="w-2 h-2 bg-blue-500 rounded-full" />,
-          isActive: activeItem === 'sport-xi',
+          isActive: activeItem === "sport-xi",
         },
         {
-          id: 'wordpress-theme',
-          label: 'Wordpress theme',
+          id: "wordpress-theme",
+          label: "Wordpress theme",
           icon: <div className="w-2 h-2 bg-gray-400 rounded-full" />,
         },
       ],
     },
     {
-      id: 'messages',
-      label: 'Messages',
+      id: "messages",
+      label: "Messages",
       icon: <MessageIcon size={16} />,
       hasNotification: true,
     },
     {
-      id: 'calendar',
-      label: 'Calendar',
+      id: "calendar",
+      label: "Calendar",
       icon: <CalendarIcon size={16} />,
     },
     {
-      id: 'team-members',
-      label: 'Team members',
+      id: "team-members",
+      label: "Team members",
       icon: <UsersIcon size={16} />,
     },
     {
-      id: 'support',
-      label: 'Support',
+      id: "support",
+      label: "Support",
       icon: <SupportIcon size={16} />,
     },
   ];
 
   const toggleExpanded = (itemId: string) => {
-    setExpandedItems(prev => 
-      prev.includes(itemId) 
-        ? prev.filter(id => id !== itemId)
+    setExpandedItems((prev) =>
+      prev.includes(itemId)
+        ? prev.filter((id) => id !== itemId)
         : [...prev, itemId]
     );
   };
 
-  
-
-  const handleItemClick = (itemId: string, hasChildren: boolean, route?: string) => {
+  const handleItemClick = (
+    itemId: string,
+    hasChildren: boolean,
+    route?: string
+  ) => {
     if (hasChildren) {
       toggleExpanded(itemId);
     } else {
@@ -110,7 +112,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
     }
   };
 
-   const renderMenuItem = (item: MenuItem, depth: number = 0) => {
+  const renderMenuItem = (item: MenuItem, depth: number = 0) => {
     const isExpanded = expandedItems.includes(item.id);
     const hasChildren = item.children && item.children.length > 0;
 
@@ -119,10 +121,20 @@ export const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
         <div
           className={`flex items-center gap-3 px-3 py-2 mx-2 rounded-lg cursor-pointer transition-colors ${
             item.isActive
-              ? 'bg-blue-50 text-blue-600'
-              : 'text-gray-700 hover:bg-gray-100'
-          } ${depth > 0 ? 'ml-6' : ''}`}
-          onClick={() => handleItemClick(item.id, hasChildren, item.id === 'sport-xi' ? '/sport-xi' : undefined)}
+              ? "bg-blue-50 text-blue-600"
+              : "text-gray-700 hover:bg-gray-100"
+          } ${depth > 0 ? "ml-6" : ""}`}
+          onClick={() =>
+            handleItemClick(
+              item.id,
+              hasChildren,
+              item.id === "sport-xi"
+                ? "/sport-xi"
+                : item.id === "dashboard"
+                ? "/"
+                : undefined
+            )
+          }
         >
           <div className="flex items-center flex-1 gap-3">
             {item.icon}
@@ -136,7 +148,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
           {hasChildren && (
             <svg
               className={`w-4 h-4 transition-transform ${
-                isExpanded ? 'rotate-180' : ''
+                isExpanded ? "rotate-180" : ""
               }`}
               fill="none"
               stroke="currentColor"
@@ -154,7 +166,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
 
         {hasChildren && isExpanded && (
           <div className="ml-4">
-            {item.children!.map(child => renderMenuItem(child, depth + 1))}
+            {item.children!.map((child) => renderMenuItem(child, depth + 1))}
           </div>
         )}
       </div>
@@ -162,10 +174,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
   };
 
   return (
-    // 
+    //
     <div className="flex flex-col w-64 min-h-screen bg-white border-r border-gray-200">
       {/* Header */}
-     
 
       {/* Workspace */}
       <div className="p-4 border-b border-gray-200">
@@ -196,7 +207,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
       {/* Navigation */}
       <nav className="flex-1 py-4 overflow-y-auto">
         <div className="space-y-1">
-          {menuItems.map(item => renderMenuItem(item))}
+          {menuItems.map((item) => renderMenuItem(item))}
         </div>
       </nav>
 
