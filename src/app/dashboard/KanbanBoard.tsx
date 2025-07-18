@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { KanbanColumn } from './KanbanColumn';
-import { useTaskStore } from '../store/taskStore';
-import { Task } from '../types';
+import React, { useEffect, useState } from "react";
+import { KanbanColumn } from "./KanbanColumn";
+import { useTaskStore } from "../store/taskStore";
+import { Task } from "../types";
 
 export const KanbanBoard: React.FC = () => {
-  const { 
-    tasks, 
-    columns, 
-    initializeData, 
-    getTasksByStatus, 
-    moveTask 
-  } = useTaskStore();
-  
+  const { tasks, columns, initializeData, getTasksByStatus, moveTask } =
+    useTaskStore();
+
   const [draggedTaskId, setDraggedTaskId] = useState<string | null>(null);
 
   useEffect(() => {
@@ -20,8 +15,8 @@ export const KanbanBoard: React.FC = () => {
 
   const handleDragStart = (e: React.DragEvent, taskId: string) => {
     setDraggedTaskId(taskId);
-    e.dataTransfer.effectAllowed = 'move';
-    e.dataTransfer.setData('text/plain', taskId);
+    e.dataTransfer.effectAllowed = "move";
+    e.dataTransfer.setData("text/plain", taskId);
   };
 
   const handleDragEnd = (e: React.DragEvent) => {
@@ -30,15 +25,15 @@ export const KanbanBoard: React.FC = () => {
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
-    e.dataTransfer.dropEffect = 'move';
+    e.dataTransfer.dropEffect = "move";
   };
 
-  const handleDrop = (e: React.DragEvent, newStatus: Task['status']) => {
+  const handleDrop = (e: React.DragEvent, newStatus: Task["status"]) => {
     e.preventDefault();
-    const taskId = e.dataTransfer.getData('text/plain');
-    
+    const taskId = e.dataTransfer.getData("text/plain");
+
     if (taskId && draggedTaskId) {
-      const draggedTask = tasks.find(task => task.id === taskId);
+      const draggedTask = tasks.find((task) => task.id === taskId);
       if (draggedTask && draggedTask.status !== newStatus) {
         moveTask(taskId, newStatus);
       }
@@ -56,13 +51,17 @@ export const KanbanBoard: React.FC = () => {
       </div>
     );
   }
-
   return (
     <div className="flex-1 min-h-screen p-6 bg-white">
-      <div className="flex gap-2 pb-4 overflow-x-auto border-b-neutral-500">
+      <div
+        className="grid gap-4 pb-4 border-b border-neutral-500"
+        style={{
+          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+        }}
+      >
         {columns.map((column) => {
           const columnTasks = getTasksByStatus(column.status);
-          
+
           return (
             <KanbanColumn
               key={column.id}
@@ -78,4 +77,26 @@ export const KanbanBoard: React.FC = () => {
       </div>
     </div>
   );
+
+  // return (
+  //   <div className="flex-1 min-h-screen p-6 bg-white">
+  //     <div className="flex gap-2 pb-4 overflow-x-auto border-b-neutral-500">
+  //       {columns.map((column) => {
+  //         const columnTasks = getTasksByStatus(column.status);
+
+  //         return (
+  //           <KanbanColumn
+  //             key={column.id}
+  //             column={column}
+  //             tasks={columnTasks}
+  //             onDragOver={handleDragOver}
+  //             onDrop={handleDrop}
+  //             onDragStart={handleDragStart}
+  //             onDragEnd={handleDragEnd}
+  //           />
+  //         );
+  //       })}
+  //     </div>
+  //   </div>
+  // );
 };
