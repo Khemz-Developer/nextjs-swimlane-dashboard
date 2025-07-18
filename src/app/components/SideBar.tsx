@@ -1,9 +1,8 @@
 "use client"
 
-
-
 // components/layout/Sidebar.tsx
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { 
   DashboardIcon, 
   BoardIcon, 
@@ -28,6 +27,7 @@ interface MenuItem {
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
+  const router = useRouter();
   const [activeItem, setActiveItem] = useState('dashboard');
   const [expandedItems, setExpandedItems] = useState<string[]>(['boards']);
 
@@ -97,15 +97,20 @@ export const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
     );
   };
 
-  const handleItemClick = (itemId: string, hasChildren: boolean) => {
+  
+
+  const handleItemClick = (itemId: string, hasChildren: boolean, route?: string) => {
     if (hasChildren) {
       toggleExpanded(itemId);
     } else {
       setActiveItem(itemId);
+      if (route) {
+        router.push(route);
+      }
     }
   };
 
-  const renderMenuItem = (item: MenuItem, depth: number = 0) => {
+   const renderMenuItem = (item: MenuItem, depth: number = 0) => {
     const isExpanded = expandedItems.includes(item.id);
     const hasChildren = item.children && item.children.length > 0;
 
@@ -113,21 +118,21 @@ export const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
       <div key={item.id}>
         <div
           className={`flex items-center gap-3 px-3 py-2 mx-2 rounded-lg cursor-pointer transition-colors ${
-            item.isActive 
-              ? 'bg-blue-50 text-blue-600' 
+            item.isActive
+              ? 'bg-blue-50 text-blue-600'
               : 'text-gray-700 hover:bg-gray-100'
           } ${depth > 0 ? 'ml-6' : ''}`}
-          onClick={() => handleItemClick(item.id, hasChildren)}
+          onClick={() => handleItemClick(item.id, hasChildren, item.id === 'sport-xi' ? '/sport-xi' : undefined)}
         >
           <div className="flex items-center flex-1 gap-3">
             {item.icon}
             <span className="text-sm font-medium">{item.label}</span>
           </div>
-          
+
           {item.hasNotification && (
             <div className="w-2 h-2 bg-red-500 rounded-full" />
           )}
-          
+
           {hasChildren && (
             <svg
               className={`w-4 h-4 transition-transform ${
@@ -146,7 +151,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
             </svg>
           )}
         </div>
-        
+
         {hasChildren && isExpanded && (
           <div className="ml-4">
             {item.children!.map(child => renderMenuItem(child, depth + 1))}

@@ -18,14 +18,8 @@ export default function Dashboard() {
   }, []);
  return (
   <div>
-    <Header />
-    <div className="flex"> {/* Flex row: Sidebar + Right content */}
-      <Sidebar />
-      <div className="flex-1 p-0"> {/* Right content takes remaining space */}
-        <ProjectHeader />
-        <KanbanBoard/>
-      </div>
-    </div>
+    
+   
   </div>
 );
 }
