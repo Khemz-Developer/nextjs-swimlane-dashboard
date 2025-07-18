@@ -1,0 +1,431 @@
+{
+  "project": {
+    "id": "1",
+    "name": "Sport Xi Project",
+    "description": "event production",
+    "status": "in_progress",
+    "assignees": [
+      {
+        "id": "1",
+        "name": "John Doe",
+        "initials": "JD"
+      },
+      {
+        "id": "2",
+        "name": "Jane Smith",
+        "initials": "JS"
+      },
+      {
+        "id": "3",
+        "name": "Mike Johnson",
+        "initials": "MJ"
+      }
+    ],
+    "lastUpdated": "04 April, 2022",
+    "manager": {
+      "id": "1",
+      "name": "John Doe",
+      "initials": "JD"
+    }
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "title": "User interview",
+      "description": "Research",
+      "status": "todo",
+      "priority": "medium",
+      "assignees": [
+        {
+          "id": "1",
+          "name": "John Doe",
+          "initials": "JD"
+        }
+      ],
+      "category": "research",
+      "dueDate": "Tomorrow",
+      "commentsCount": 2,
+      "likesCount": 2,
+      "hasAttachment": false,
+      "hasStream": false,
+      "hasGroupCall": false,
+      "createdAt": "2022-04-01T10:00:00Z",
+      "updatedAt": "2022-04-01T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "title": "Design System",
+      "description": "Design",
+      "status": "todo",
+      "priority": "high",
+      "assignees": [
+        {
+          "id": "2",
+          "name": "Jane Smith",
+          "initials": "JS"
+        }
+      ],
+      "category": "design",
+      "commentsCount": 3,
+      "likesCount": 8,
+      "reportsCount": 2,
+      "hasAttachment": false,
+      "hasStream": false,
+      "hasGroupCall": false,
+      "createdAt": "2022-04-01T11:00:00Z",
+      "updatedAt": "2022-04-01T11:00:00Z"
+    },
+    {
+      "id": "3",
+      "title": "Speech",
+      "description": "Other",
+      "status": "todo",
+      "priority": "low",
+      "assignees": [
+        {
+          "id": "3",
+          "name": "Mike Johnson",
+          "initials": "MJ"
+        }
+      ],
+      "category": "other",
+      "commentsCount": 1,
+      "likesCount": 3,
+      "hasAttachment": false,
+      "hasStream": true,
+      "hasGroupCall": false,
+      "createdAt": "2022-04-01T12:00:00Z",
+      "updatedAt": "2022-04-01T12:00:00Z"
+    },
+    {
+      "id": "4",
+      "title": "Wireframe",
+      "description": "Design",
+      "status": "todo",
+      "priority": "medium",
+      "assignees": [
+        {
+          "id": "2",
+          "name": "Jane Smith",
+          "initials": "JS"
+        }
+      ],
+      "category": "design",
+      "commentsCount": 4,
+      "likesCount": 0,
+      "hasAttachment": true,
+      "hasStream": false,
+      "hasGroupCall": false,
+      "createdAt": "2022-04-01T13:00:00Z",
+      "updatedAt": "2022-04-01T13:00:00Z"
+    },
+    {
+      "id": "5",
+      "title": "UI Design",
+      "description": "Design",
+      "status": "in_progress",
+      "priority": "high",
+      "assignees": [
+        {
+          "id": "1",
+          "name": "John Doe",
+          "initials": "JD"
+        },
+        {
+          "id": "2",
+          "name": "Jane Smith",
+          "initials": "JS"
+        }
+      ],
+      "category": "design",
+      "dueDate": "Tomorrow",
+      "commentsCount": 2,
+      "likesCount": 2,
+      "hasAttachment": false,
+      "hasStream": false,
+      "hasGroupCall": false,
+      "createdAt": "2022-04-01T14:00:00Z",
+      "updatedAt": "2022-04-01T14:00:00Z"
+    },
+    {
+      "id": "6",
+      "title": "Check Clients Feedback",
+      "description": "Feedback",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignees": [
+        {
+          "id": "1",
+          "name": "John Doe",
+          "initials": "JD"
+        },
+        {
+          "id": "2",
+          "name": "Jane Smith",
+          "initials": "JS"
+        }
+      ],
+      "category": "feedback",
+      "dueDate": "22 April, 2022",
+      "commentsCount": 8,
+      "likesCount": 0,
+      "hasAttachment": true,
+      "hasStream": false,
+      "hasGroupCall": false,
+      "createdAt": "2022-04-01T15:00:00Z",
+      "updatedAt": "2022-04-01T15:00:00Z"
+    },
+    {
+      "id": "7",
+      "title": "Copyright",
+      "description": "Documentation",
+      "status": "in_progress",
+      "priority": "low",
+      "assignees": [
+        {
+          "id": "3",
+          "name": "Mike Johnson",
+          "initials": "MJ"
+        }
+      ],
+      "category": "other",
+      "dueDate": "22 April, 2022",
+      "commentsCount": 4,
+      "likesCount": 0,
+      "hasAttachment": false,
+      "hasStream": false,
+      "hasGroupCall": false,
+      "createdAt": "2022-04-01T16:00:00Z",
+      "updatedAt": "2022-04-01T16:00:00Z"
+    },
+    {
+      "id": "8",
+      "title": "Filter Sorting",
+      "description": "UI Design",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignees": [
+        {
+          "id": "1",
+          "name": "John Doe",
+          "initials": "JD"
+        },
+        {
+          "id": "2",
+          "name": "Jane Smith",
+          "initials": "JS"
+        }
+      ],
+      "category": "design",
+      "commentsCount": 0,
+      "likesCount": 0,
+      "hasAttachment": false,
+      "hasStream": false,
+      "hasGroupCall": false,
+      "createdAt": "2022-04-01T17:00:00Z",
+      "updatedAt": "2022-04-01T17:00:00Z"
+    },
+    {
+      "id": "9",
+      "title": "Prototype",
+      "description": "Research",
+      "status": "approved",
+      "priority": "high",
+      "assignees": [
+        {
+          "id": "1",
+          "name": "John Doe",
+          "initials": "JD"
+        },
+        {
+          "id": "2",
+          "name": "Jane Smith",
+          "initials": "JS"
+        }
+      ],
+      "category": "research",
+      "commentsCount": 35,
+      "likesCount": 243,
+      "hasAttachment": false,
+      "hasStream": false,
+      "hasGroupCall": false,
+      "createdAt": "2022-04-01T18:00:00Z",
+      "updatedAt": "2022-04-01T18:00:00Z"
+    },
+    {
+      "id": "10",
+      "title": "Detail Page",
+      "description": "Design",
+      "status": "approved",
+      "priority": "medium",
+      "assignees": [
+        {
+          "id": "1",
+          "name": "John Doe",
+          "initials": "JD"
+        },
+        {
+          "id": "2",
+          "name": "Jane Smith",
+          "initials": "JS"
+        }
+      ],
+      "category": "design",
+      "commentsCount": 6,
+      "likesCount": 28,
+      "hasAttachment": true,
+      "hasStream": false,
+      "hasGroupCall": false,
+      "createdAt": "2022-04-01T19:00:00Z",
+      "updatedAt": "2022-04-01T19:00:00Z"
+    },
+    {
+      "id": "11",
+      "title": "Animation preloaders",
+      "description": "Development",
+      "status": "approved",
+      "priority": "low",
+      "assignees": [
+        {
+          "id": "3",
+          "name": "Mike Johnson",
+          "initials": "MJ"
+        }
+      ],
+      "category": "development",
+      "commentsCount": 4,
+      "likesCount": 9,
+      "hasAttachment": false,
+      "hasStream": false,
+      "hasGroupCall": false,
+      "createdAt": "2022-04-01T20:00:00Z",
+      "updatedAt": "2022-04-01T20:00:00Z"
+    },
+    {
+      "id": "12",
+      "title": "Sorting category",
+      "description": "UX Design",
+      "status": "approved",
+      "priority": "medium",
+      "assignees": [
+        {
+          "id": "1",
+          "name": "John Doe",
+          "initials": "JD"
+        },
+        {
+          "id": "2",
+          "name": "Jane Smith",
+          "initials": "JS"
+        }
+      ],
+      "category": "design",
+      "commentsCount": 0,
+      "likesCount": 0,
+      "hasAttachment": false,
+      "hasStream": false,
+      "hasGroupCall": false,
+      "createdAt": "2022-04-01T21:00:00Z",
+      "updatedAt": "2022-04-01T21:00:00Z"
+    },
+    {
+      "id": "13",
+      "title": "Group Management",
+      "description": "Other",
+      "status": "rejected",
+      "priority": "high",
+      "assignees": [
+        {
+          "id": "3",
+          "name": "Mike Johnson",
+          "initials": "MJ"
+        }
+      ],
+      "category": "other",
+      "commentsCount": 0,
+      "likesCount": 329,
+      "hasAttachment": false,
+      "hasStream": false,
+      "hasGroupCall": true,
+      "createdAt": "2022-04-01T22:00:00Z",
+      "updatedAt": "2022-04-01T22:00:00Z"
+    },
+    {
+      "id": "14",
+      "title": "Design System",
+      "description": "Design",
+      "status": "rejected",
+      "priority": "medium",
+      "assignees": [
+        {
+          "id": "2",
+          "name": "Jane Smith",
+          "initials": "JS"
+        }
+      ],
+      "category": "design",
+      "commentsCount": 3,
+      "likesCount": 8,
+      "reportsCount": 2,
+      "hasAttachment": false,
+      "hasStream": false,
+      "hasGroupCall": false,
+      "createdAt": "2022-04-01T23:00:00Z",
+      "updatedAt": "2022-04-01T23:00:00Z"
+    },
+    {
+      "id": "15",
+      "title": "Slider controls",
+      "description": "Interface",
+      "status": "rejected",
+      "priority": "low",
+      "assignees": [
+        {
+          "id": "1",
+          "name": "John Doe",
+          "initials": "JD"
+        },
+        {
+          "id": "2",
+          "name": "Jane Smith",
+          "initials": "JS"
+        }
+      ],
+      "category": "interface",
+      "commentsCount": 8,
+      "likesCount": 31,
+      "hasAttachment": false,
+      "hasStream": false,
+      "hasGroupCall": false,
+      "createdAt": "2022-04-02T00:00:00Z",
+      "updatedAt": "2022-04-02T00:00:00Z"
+    },
+    {
+      "id": "16",
+      "title": "Slider controls",
+      "description": "Interface",
+      "status": "rejected",
+      "priority": "medium",
+      "assignees": [
+        {
+          "id": "1",
+          "name": "John Doe",
+          "initials": "JD"
+        },
+        {
+          "id": "2",
+          "name": "Jane Smith",
+          "initials": "JS"
+        }
+      ],
+      "category": "interface",
+      "commentsCount": 0,
+      "likesCount": 0,
+      "hasAttachment": true,
+      "hasStream": false,
+      "hasGroupCall": false,
+      "createdAt": "2022-04-02T01:00:00Z",
+      "updatedAt": "2022-04-02T01:00:00Z"
+    }
+  ]
+}
