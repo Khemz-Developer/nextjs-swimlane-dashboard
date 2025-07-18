@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -29,8 +28,8 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className={`bg-white border-b border-gray-200 px-4 py-3 ${className}`}>
-      <div className="flex items-center justify-between mx-auto max-w-7xl">
+    <header className={`bg-white border-b border-gray-200 px-6 py-3 ${className}`}>
+      <div className="flex items-center justify-between">
         {/* Logo Section */}
         <div className="flex items-center space-x-2">
           <div className="flex items-center justify-center w-8 h-8 bg-blue-500 rounded-md">
@@ -43,8 +42,17 @@ const Header: React.FC<HeaderProps> = ({
           </span>
         </div>
 
-        {/* Center Section - Search and Create Button */}
+        {/* Right Section - Create Button, Search, and User Actions */}
         <div className="flex items-center space-x-4">
+          {/* Create New Board Button */}
+          <button
+            onClick={onCreateBoard}
+            className="flex items-center px-4 py-2 space-x-2 text-white transition-colors duration-200 bg-blue-500 rounded-lg hover:bg-blue-600"
+          >
+            <Plus className="w-4 h-4" />
+            <span className="font-medium">Create new board</span>
+          </button>
+
           {/* Search Bar */}
           <div className="relative">
             <Search className="absolute w-4 h-4 text-gray-400 transform -translate-y-1/2 left-3 top-1/2" />
@@ -57,18 +65,6 @@ const Header: React.FC<HeaderProps> = ({
             />
           </div>
 
-          {/* Create New Board Button */}
-          <button
-            onClick={onCreateBoard}
-            className="flex items-center px-4 py-2 space-x-2 text-white transition-colors duration-200 bg-blue-500 rounded-lg hover:bg-blue-600"
-          >
-            <Plus className="w-4 h-4" />
-            <span className="font-medium">Create new board</span>
-          </button>
-        </div>
-
-        {/* Right Section - User Actions */}
-        <div className="flex items-center space-x-3">
           {/* Settings Icon */}
           <button className="p-2 text-gray-500 transition-colors duration-200 rounded-lg hover:text-gray-700 hover:bg-gray-100">
             <Settings className="w-5 h-5" />
