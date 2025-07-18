@@ -11,6 +11,8 @@ A **pixel-perfect, responsive swimlane task dashboard** built with **Next.js, Ta
 ```bash
 git clone https://github.com/your-username/nextjs-swimlane-dashboard.git
 cd nextjs-swimlane-dashboard
+```
+
 2️⃣ Install Dependencies
 bash
 Copy
